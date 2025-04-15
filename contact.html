@@ -11,154 +11,83 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
 <body>
-    <!-- Loading Overlay -->
-    <div class="loading-overlay">
-        <div class="loading-spinner"></div>
-    </div>
-
-    <!-- Navigation -->
+    <!-- Navigation (Same as index.html) -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold text-olive" href="index.html">
-                <i class="fas fa-tshirt me-2"></i>AngyWoolz
-            </a>
+            <a class="navbar-brand fw-bold text-olive" href="index.html">AngyWoolz</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1"></i>About Us</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="male.html"><i class="fas fa-male me-1"></i>Male</a>
+                        <a class="nav-link" href="male.html">Male</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="female.html"><i class="fas fa-female me-1"></i>Female</a>
+                        <a class="nav-link" href="female.html">Female</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1"></i>Contact</a>
+                        <a class="nav-link active" href="contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Products Section -->
+    <!-- Contact Section -->
     <section class="py-5 mt-5">
         <div class="container">
-            <h2 class="display-5 fw-bold mb-5 text-center section-title">Female Collection</h2>
-            <div class="row g-4">
-                <!-- Product 1 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="card product-card h-100">
-                        <div class="slideshow-container">
-                            <img src="images/female/pink corset.jpg" class="slideshow-image active" alt="Pink Corset Front">
-                            <img src="images/female/pink corset op.jpg" class="slideshow-image" alt="Pink Corset Back">
-                            <div class="slideshow-nav"></div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pink Corset</h5>
-                            <p class="card-text">BWP 599.99</p>
-                            <button class="btn btn-gold w-100">Add to Cart</button>
-                        </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-4">Get in Touch</h2>
+                    <p class="lead mb-4">We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
+                    
+                    <div class="contact-info mb-4">
+                        <p><i class="fas fa-envelope me-2"></i> info@angywoolz.com</p>
+                        <p><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 123 Fashion Street, Style City</p>
+                    </div>
+
+                    <div class="social-icons mb-4">
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
-                <!-- Product 2 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="card product-card h-100">
-                        <div class="slideshow-container">
-                            <img src="images/female/pink two piece.jpg" class="slideshow-image active" alt="Pink Two Piece Set">
-                            <div class="slideshow-nav"></div>
+                
+                <div class="col-lg-6">
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pink Two Piece Set</h5>
-                            <p class="card-text">BWP 799.99</p>
-                            <button class="btn btn-gold w-100">Add to Cart</button>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
                         </div>
-                    </div>
-                </div>
-                <!-- Product 3 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="card product-card h-100">
-                        <img src="images/female/Pink_crochet_prom_dress-removebg-preview.png" class="card-img-top" alt="Pink Crochet Prom Dress">
-                        <div class="card-body">
-                            <h5 class="card-title">Crochet Prom Dress</h5>
-                            <p class="card-text">BWP 999.99</p>
-                            <button class="btn btn-gold w-100">Add to Cart</button>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
                         </div>
-                    </div>
-                </div>
-                <!-- Product 4 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="card product-card h-100">
-                        <img src="images/female/blue skirt n top.jpg" class="card-img-top" alt="Blue Skirt and Top Set">
-                        <div class="card-body">
-                            <h5 class="card-title">Blue Skirt & Top Set</h5>
-                            <p class="card-text">BWP 699.99</p>
-                            <button class="btn btn-gold w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 5 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="card product-card h-100">
-                        <img src="images/female/butterfly dress.png" class="card-img-top" alt="Butterfly Dress">
-                        <div class="card-body">
-                            <h5 class="card-title">Butterfly Dress</h5>
-                            <p class="card-text">BWP 849.99</p>
-                            <button class="btn btn-gold w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 6 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="card product-card h-100">
-                        <img src="images/female/green square dress.png" class="card-img-top" alt="Green Square Dress">
-                        <div class="card-body">
-                            <h5 class="card-title">Green Square Dress</h5>
-                            <p class="card-text">BWP 749.99</p>
-                            <button class="btn btn-gold w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 7 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="card product-card h-100">
-                        <img src="images/female/orange dress.png" class="card-img-top" alt="Orange Summer Dress">
-                        <div class="card-body">
-                            <h5 class="card-title">Orange Summer Dress</h5>
-                            <p class="card-text">BWP 649.99</p>
-                            <button class="btn btn-gold w-100">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 8 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="card product-card h-100">
-                        <img src="images/female/beads dress.png" class="card-img-top" alt="Beaded Evening Dress">
-                        <div class="card-body">
-                            <h5 class="card-title">Beaded Evening Dress</h5>
-                            <p class="card-text">BWP 1299.99</p>
-                            <button class="btn btn-gold w-100">Add to Cart</button>
-                        </div>
-                    </div>
+                        <button type="submit" class="btn btn-olive">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4 mt-5">
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p class="mb-0">
-                        <i class="fas fa-copyright me-2"></i>2025 AngyWoolz. All rights reserved.
-                    </p>
+                    <p class="mb-0">&copy; 2025 AngyWoolz. All rights reserved.</p>
                 </div>
             </div>
         </div>
