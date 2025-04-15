@@ -1,0 +1,164 @@
+:root {
+    --dark-green: #1A3F22;
+    --olive: #58761B;
+    --gold: #D99201;
+    --brown: #905A01;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.text-olive {
+    color: var(--dark-green) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(26, 63, 34, 0.8), rgba(26, 63, 34, 0.8)),
+                url('../images/hero-bg.jpg') center/cover no-repeat;
+    color: white;
+    margin-top: 76px; /* Height of navbar */
+}
+
+/* Buttons */
+.btn-olive {
+    background-color: var(--olive);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-olive:hover {
+    background-color: var(--dark-green);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Product Cards */
+.product-card {
+    border: none;
+    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    border-radius: 10px 10px 0 0;
+    transition: opacity 0.5s ease;
+}
+
+.product-card .card-text {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* Slideshow Styles */
+.slideshow-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+.slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slideshow-image.active {
+    opacity: 1;
+}
+
+.slideshow-nav {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 2;
+}
+
+.slideshow-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slideshow-dot.active {
+    background-color: var(--gold);
+}
+
+/* Contact Form */
+.contact-form .form-control {
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e9ecef;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--olive);
+    box-shadow: 0 0 0 0.2rem rgba(88, 118, 27, 0.25);
+}
+
+/* Social Media Icons */
+.social-icons a {
+    color: var(--dark-green);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--olive);
+}
+
+/* Mission Cards */
+.card {
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .h4 {
+    color: var(--dark-green);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+} 
