@@ -45,6 +45,18 @@ function initSlideshow(container) {
     container.addEventListener('mouseleave', startSlideshow);
 }
 
+// Function to dynamically add images to a slideshow container
+function populateSlideshow(container, imageUrls) {
+    const nav = container.querySelector('.slideshow-nav');
+    imageUrls.forEach((url, index) => {
+        const img = document.createElement('img');
+        img.src = url;
+        img.className = `slideshow-image${index === 0 ? ' active' : ''}`;
+        img.alt = `Slide ${index + 1}`;
+        container.insertBefore(img, nav);
+    });
+}
+
 // Add to Cart functionality
 document.addEventListener('DOMContentLoaded', function() {
     const addToCartButtons = document.querySelectorAll('.btn-olive, .btn-gold');
@@ -52,18 +64,33 @@ document.addEventListener('DOMContentLoaded', function() {
     addToCartButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            const productCard = this.closest('.product-card');
-            const productName = productCard.querySelector('.card-title').textContent;
-            const productPrice = productCard.querySelector('.card-text').textContent;
             
+            // Ensure the button is inside a product card
+            const productCard = this.closest('.product-card');
+            if (!productCard) {
+                console.error('Add to Cart button is not inside a product card.');
+                return;
+            }
+
+            // Retrieve product name and price
+            const productNameElement = productCard.querySelector('.card-title');
+            const productPriceElement = productCard.querySelector('.card-text');
+            if (!productNameElement || !productPriceElement) {
+                console.error('Product name or price not found in the product card.');
+                return;
+            }
+
+            const productName = productNameElement.textContent.trim();
+            const productPrice = productPriceElement.textContent.trim();
+
             // Create notification
             const notification = document.createElement('div');
             notification.className = 'alert alert-success position-fixed top-0 end-0 m-3';
             notification.style.zIndex = '1000';
             notification.textContent = `${productName} (${productPrice}) added to cart!`;
-            
+
             document.body.appendChild(notification);
-            
+
             // Remove notification after 3 seconds
             setTimeout(() => {
                 notification.remove();
@@ -74,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize slideshows
     document.querySelectorAll('.slideshow-container').forEach(container => {
         initSlideshow(container);
-});
+    });
 
- // Example usage
+    // Example usage
     const slideshowContainer = document.querySelector('.slideshow-container');
     if (slideshowContainer) {
         const imageUrls = [
@@ -105,26 +132,42 @@ if (contactForm) {
         e.preventDefault();
         
         // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        
-        // Here you would typically send the form data to a server
-        // For now, we'll just show a success message
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+
+        // Validate form fields
+        if (!name || !email || !message) {
+            console.error('Form fields are missing.');
+            return;
+        }
+
+        if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+            alert('Please fill out all fields before submitting.');
+            return;
+        }
+
+        // Simulate form submission (replace with actual server call if needed)
+        console.log('Form submitted:', {
+            name: name.value.trim(),
+            email: email.value.trim(),
+            message: message.value.trim()
+        });
+
+        // Show success notification
         const notification = document.createElement('div');
         notification.className = 'alert alert-success position-fixed top-0 end-0 m-3';
         notification.style.zIndex = '1000';
         notification.textContent = 'Message sent successfully!';
         
         document.body.appendChild(notification);
-        
+
         // Clear form
         contactForm.reset();
-        
+
         // Remove notification after 3 seconds
         setTimeout(() => {
             notification.remove();
         }, 3000);
     });
-} 
-
+}
