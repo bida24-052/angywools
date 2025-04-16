@@ -74,7 +74,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize slideshows
     document.querySelectorAll('.slideshow-container').forEach(container => {
         initSlideshow(container);
-    });
+});
+
+ // Example usage
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    if (slideshowContainer) {
+        const imageUrls = [
+            'blue fire.jpeg',
+            'gray mini dress.jpeg',
+            'granny square maxi dress.jpg'
+        ];
+        populateSlideshow(slideshowContainer, imageUrls);
+    }
 });
 
 // Smooth scrolling for anchor links
