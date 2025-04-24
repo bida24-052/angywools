@@ -1,61 +1,6 @@
-// Slideshow functionality
-function initSlideshow(container) {
-    const images = container.querySelectorAll('.slideshow-image');
-    const nav = container.querySelector('.slideshow-nav');
-    let currentIndex = 0;
-    let interval;
 
-    // Create navigation dots
-    images.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.className = `slideshow-dot${index === 0 ? ' active' : ''}`;
-        dot.addEventListener('click', () => {
-            clearInterval(interval);
-            showImage(index);
-            startSlideshow();
-        });
-        nav.appendChild(dot);
-    });
 
-    function showImage(index) {
-        images.forEach(img => img.classList.remove('active'));
-        const dots = nav.querySelectorAll('.slideshow-dot');
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        images[index].classList.add('active');
-        dots[index].classList.add('active');
-        currentIndex = index;
-    }
-
-    function nextImage() {
-        const nextIndex = (currentIndex + 1) % images.length;
-        showImage(nextIndex);
-    }
-
-    function startSlideshow() {
-        interval = setInterval(nextImage, 3000);
-    }
-
-    // Show first image and start slideshow
-    showImage(0);
-    startSlideshow();
-
-    // Pause on hover
-    container.addEventListener('mouseenter', () => clearInterval(interval));
-    container.addEventListener('mouseleave', startSlideshow);
-}
-
-// Function to dynamically add images to a slideshow container
-function populateSlideshow(container, imageUrls) {
-    const nav = container.querySelector('.slideshow-nav');
-    imageUrls.forEach((url, index) => {
-        const img = document.createElement('img');
-        img.src = url;
-        img.className = `slideshow-image${index === 0 ? ' active' : ''}`;
-        img.alt = `Slide ${index + 1}`;
-        container.insertBefore(img, nav);
-    });
-}
+ 
 
 // Add to Cart functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -98,22 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize slideshows
-    document.querySelectorAll('.slideshow-container').forEach(container => {
-        initSlideshow(container);
-    });
-
-    // Example usage
-    const slideshowContainer = document.querySelector('.slideshow-container');
-    if (slideshowContainer) {
-        const imageUrls = [
-            'blue fire.jpeg',
-            'gray mini dress.jpeg',
-            'granny square maxi dress.jpg'
-        ];
-        populateSlideshow(slideshowContainer, imageUrls);
-    }
-});
+   
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
