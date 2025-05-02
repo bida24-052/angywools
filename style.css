@@ -168,21 +168,7 @@
 .swiper .swiper-pagination-bullet-active{
     background: #fff;
 }
-.banner-card{
-    position: relative;
-}
-.banner-card img{
-    max-width: 100%;
-    height: auto;
-}
-.banner-text{
-    position: absolute;
-    top: 30;
-    color: #fff;
-    padding: 25px;
-}
-    
-    
+
     
     
 
