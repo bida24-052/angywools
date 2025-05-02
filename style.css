@@ -31,6 +31,7 @@ body {
     color: var(--dark-green) !important;
 }
 
+
 /* Hero Section */
 .hero-section {
     background: linear-gradient(rgba(26, 63, 34, 0.8), rgba(26, 63, 34, 0.8)),
@@ -183,3 +184,34 @@ body {
         margin: 1rem 0;
     }
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.swiper{
+    width: 80%;
+    height: fit-content;
+}
+.swiper-slide img{
+    width: 100%;
+}
+.swiper .swiper-button-prev, .swiper .swiper-button-next{
+    color: #fff;
+}
+.swiper .swiper-pagination-bullet-active{
+    background: #fff;
+}
+    
+    
+
+    
+    
